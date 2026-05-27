@@ -1,0 +1,5 @@
+defaults:
+  - model: cnn
+  - dataset: mnist
+  - train: default
+  - _self_
