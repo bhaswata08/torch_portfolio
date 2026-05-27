@@ -27,11 +27,14 @@ def train(cfg: Config) -> None:
     n = num_classes(dataset)
 
     model: nn.Module = get_model(cfg.model.name, c, n).to(device)
+    param_count = sum(p.numel() for p in model.parameters() if p.requires_grad)
 
     if cfg.train.compile:
         model = cast(nn.Module, torch.compile(model))  # compile → nn.Module
 
-    print(f"Model: {cfg.model.name} | Dataset: {cfg.dataset.name}")
+    print(
+        f"Model: {cfg.model.name} | Params: {param_count:,} | Dataset: {cfg.dataset.name}"
+    )
 
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.AdamW(model.parameters(), lr=cfg.train.lr)

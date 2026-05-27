@@ -19,6 +19,7 @@
       name = "cuda-env";
 
       targetPkgs = pkgs: with pkgs; [
+        zsh
         git
         gitRepo
         gnupg
@@ -53,12 +54,12 @@
         export CUDA_PATH=${pkgs.cudatoolkit}
         export EXTRA_LDFLAGS="-L/lib -L${pkgs.linuxPackages.nvidia_x11}/lib"
         export EXTRA_CCFLAGS="-I/usr/include"
-        export SSL_CERT_FILE="./.venv/lib/python3.14/site-packages/certifi/cacert.pem"
+        export SSL_CERT_FILE="./.venv/lib/python3.13/site-packages/certifi/cacert.pem"
         export XDG_CONFIG_HOME=$HOME/.config
         export XDG_DATA_HOME=$HOME/.local/share
       '';
 
-      runScript = "bash --init-file <(echo 'echo \"cuda-env ready\"')";
+      runScript = "zsh";
     }).env;
   };
 }

@@ -51,13 +51,19 @@ def train_one_epoch(
 
 
 @torch.no_grad()
-def evaluate(model: nn.Module, loader: Loader, split: str = "test") -> float:
-    """Returns accuracy on the given loader."""
+def evaluate(
+    model: nn.Module, loader: Loader, split: str = "test", frac: float = 0.1
+) -> float:
+    """Returns accuracy on the given loader. frac controls what fraction of batches to evaluate."""
     _ = model.eval()
     correct = 0
     total = 0
+    max_batches = max(1, int(len(loader) * frac))
 
-    for batch in loader:
+    for i, batch in enumerate(loader):
+        if i >= max_batches:
+            break
+
         x = cast(torch.Tensor, batch[0]).to(device, non_blocking=True)
         y = cast(torch.Tensor, batch[1]).to(device, non_blocking=True)
 
@@ -69,13 +75,11 @@ def evaluate(model: nn.Module, loader: Loader, split: str = "test") -> float:
             scores = cast(torch.Tensor, model(x))
 
         _, preds = cast(tuple[torch.Tensor, torch.Tensor], scores.max(1))
-
-        matches = preds == y
-        correct += int(matches.sum().item())
+        correct += int((preds == y).sum().item())
         total += int(y.size(0))
 
     acc = correct / total
-    print(f"{split:>5} accuracy: {correct}/{total} ({acc * 100:.2f}%)")
+    print(f"{split:>5} accuracy: {correct}/{total} ({acc * 100:.2f}%) [frac={frac}]")
 
     _ = model.train()
     return acc

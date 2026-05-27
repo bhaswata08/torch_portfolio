@@ -2,6 +2,7 @@ from typing import Any, cast, override
 
 import torch
 import torch.nn as nn
+import torch.nn.functional as F
 
 
 class CNN(nn.Module):
@@ -29,8 +30,11 @@ class CNN(nn.Module):
     @override
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         x = cast(torch.Tensor, self.conv1(x))
+        x = F.relu(x)
         x = cast(torch.Tensor, self.pool(x))
         x = cast(torch.Tensor, self.conv2(x))
+        x = F.relu(x)
         x = cast(torch.Tensor, self.pool(x))
+        x = x.flatten(1)
         x = cast(torch.Tensor, self.fc1(x))
         return x

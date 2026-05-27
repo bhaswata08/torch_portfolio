@@ -2,6 +2,7 @@ from dataclasses import dataclass, field
 
 import torch
 from hydra.core.config_store import ConfigStore
+from omegaconf import MISSING
 
 # ── Device & AMP (unchanged) ──────────────────────────────────────────────────
 if torch.cuda.is_available():
@@ -17,17 +18,17 @@ _ = torch.set_float32_matmul_precision("high")
 # ── Structured configs (schema + type safety) ─────────────────────────────────
 @dataclass
 class ModelConfig:
-    name: str = "cnn"
+    name: str = MISSING
 
 
 @dataclass
 class DatasetConfig:
-    name: str = "mnist"
+    name: str = MISSING
 
 
 @dataclass
 class TrainConfig:
-    epochs: int = 10
+    epochs: int = 2
     batch_size: int = 64
     lr: float = 1e-3
     compile: bool = True
@@ -43,4 +44,4 @@ class Config:
 
 # Register with Hydra's config store
 cs = ConfigStore.instance()
-cs.store(name="config", node=Config)
+cs.store(name="base_config", node=Config)
