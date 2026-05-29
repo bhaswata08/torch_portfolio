@@ -1,4 +1,4 @@
-epochs: 2
+epochs: 5
 batch_size: 64
 lr: 1e-3
 compile: true
