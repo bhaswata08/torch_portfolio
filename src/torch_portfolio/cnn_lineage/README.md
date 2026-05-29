@@ -5,7 +5,7 @@
 - [x] Lenet5
 - [x] AlexNet
 - [x] VGGNet
-- [ ] Inception/GoogleNet
+- [x] Inception/GoogleNet
 - [ ] ResNet
 - [ ] DenseNet
 - [ ] SENet

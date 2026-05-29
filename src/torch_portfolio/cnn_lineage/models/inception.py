@@ -31,7 +31,7 @@ class AuxClassifier(nn.Module):
             padding=(0, 0),
         )
         self.branch_aux_3: nn.Flatten = nn.Flatten(1)
-        self.branch_aux_4: nn.Linear = nn.Linear(1024, 1024)
+        self.branch_aux_4: nn.Linear = nn.Linear(2048, 1024)
         self.branch_aux_5: nn.Dropout = nn.Dropout(0.7)
         self.branch_aux_6: nn.Linear = nn.Linear(1024, num_classes)
 
