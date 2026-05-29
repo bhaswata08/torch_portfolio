@@ -27,12 +27,12 @@ def _get_transforms(dataset: DatasetName) -> tuple[v2.Compose, v2.Compose]:
                 mean=[0.4914, 0.4822, 0.4465],
                 std=[0.2470, 0.2435, 0.2616],
             )
-            upsample = v2.Resize(227)
+            upsample = v2.Resize(224)
             train_tf = v2.Compose(
                 [
                     *base,
                     upsample,
-                    v2.RandomCrop(227, padding=28),
+                    v2.RandomCrop(224, padding=28),
                     v2.RandomHorizontalFlip(),
                     normalize,
                 ]

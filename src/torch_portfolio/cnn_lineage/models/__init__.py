@@ -5,7 +5,9 @@ import torch.nn as nn
 from torch_portfolio.cnn_lineage.models.alexnet import AlexNet
 from torch_portfolio.cnn_lineage.models.cnn import CNN
 from torch_portfolio.cnn_lineage.models.fcn import FCN
+from torch_portfolio.cnn_lineage.models.inception import InceptionNet
 from torch_portfolio.cnn_lineage.models.lenet import LeNet
+from torch_portfolio.cnn_lineage.models.vgg import VGGNet
 
 type ModelFactory = Callable[[int, int], nn.Module]
 
@@ -14,6 +16,8 @@ _REGISTRY: dict[str, ModelFactory] = {
     "cnn": lambda c, n: CNN(in_channels=c, num_classes=n),
     "lenet": lambda c, n: LeNet(in_channels=c, num_classes=n),
     "alexnet": lambda c, n: AlexNet(in_channels=c, num_classes=n),
+    "vgg": lambda c, n: VGGNet(in_channels=c, num_classes=n),
+    "inception": lambda c, n: InceptionNet(in_channels=c, num_classes=n),
 }
 
 
