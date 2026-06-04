@@ -6,15 +6,27 @@
 - [x] AlexNet
 - [x] VGGNet
 - [x] Inception/GoogleNet
-- [ ] ResNet
-- [ ] DenseNet
+- [x] ResNet
 - [ ] SENet
+- [ ] DenseNet
+- [ ] MobileNet
 - [ ] EfficientNet
 - [ ] UNet
-- [ ] MobileNet
 - [ ] ViT
 - [ ] Swim Transformer
 - [ ] ConvNeXt
+
+# Lineage for text
+
+- [ ] Embedding + RNN (vanilla)
+- [ ] LSTM
+- [ ] GRU
+- [ ] Seq2Seq (encoder-decoder with RNN)
+- [ ] Bahdanau Attention
+- [ ] Transformer (Vaswani 2017)
+- [ ] BERT
+- [ ] GPT
+- [ ] T5
 
 # How to execute shell command
 
