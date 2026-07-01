@@ -4,10 +4,12 @@ import torch.nn as nn
 
 from torch_portfolio.cnn_lineage.models.alexnet import AlexNet
 from torch_portfolio.cnn_lineage.models.cnn import CNN
+from torch_portfolio.cnn_lineage.models.densenet import DenseNet121
 from torch_portfolio.cnn_lineage.models.fcn import FCN
 from torch_portfolio.cnn_lineage.models.inception import InceptionNet
 from torch_portfolio.cnn_lineage.models.lenet import LeNet
 from torch_portfolio.cnn_lineage.models.resnet import ResNet
+from torch_portfolio.cnn_lineage.models.senet import SeResNet
 from torch_portfolio.cnn_lineage.models.vgg import VGGNet
 
 type ModelFactory = Callable[[int, int], nn.Module]
@@ -20,6 +22,8 @@ _REGISTRY: dict[str, ModelFactory] = {
     "vgg": lambda c, n: VGGNet(in_channels=c, num_classes=n),
     "inception": lambda c, n: InceptionNet(in_channels=c, num_classes=n),
     "resnet": lambda c, n: ResNet(in_channels=c, num_classes=n),
+    "seresnet": lambda c, n: SeResNet(in_channels=c, num_classes=n),
+    "densenet": lambda c, n: DenseNet121(in_channels=c, num_classes=n),
 }
 
 

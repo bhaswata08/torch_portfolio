@@ -1158,6 +1158,7 @@ dependencies = [
     { name = "torch" },
     { name = "torchvision" },
     { name = "typer" },
+    { name = "types-torch" },
 ]
 
 [package.metadata]
@@ -1171,6 +1172,7 @@ requires-dist = [
     { name = "torch", specifier = ">=2.11.0" },
     { name = "torchvision", specifier = ">=0.26.0" },
     { name = "typer", specifier = ">=0.25.1" },
+    { name = "types-torch", specifier = ">=0.1.1" },
 ]
 
 [[package]]
@@ -1235,6 +1237,15 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/e4/51/9aed62104cea109b820bbd6c14245af756112017d309da813ef107d42e7e/typer-0.25.1.tar.gz", hash = "sha256:9616eb8853a09ffeabab1698952f33c6f29ffdbceb4eaeecf571880e8d7664cc", size = 122276, upload-time = "2026-04-30T19:32:16.964Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/3f/f9/2b3ff4e56e5fa7debfaf9eb135d0da96f3e9a1d5b27222223c7296336e5f/typer-0.25.1-py3-none-any.whl", hash = "sha256:75caa44ed46a03fb2dab8808753ffacdbfea88495e74c85a28c5eefcf5f39c89", size = 58409, upload-time = "2026-04-30T19:32:18.271Z" },
+]
+
+[[package]]
+name = "types-torch"
+version = "0.1.1"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/da/cb/266771f686bc10562b93a90b5b1dbf11342dfae1c159da15b1003a082b74/types-torch-0.1.1.tar.gz", hash = "sha256:2bde1448110ab1b7eaf774c9ad78d81ea1b7c1b162610ca225e277195d1bb7d7", size = 75907, upload-time = "2025-04-01T09:01:13.843Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/07/f0/47fadeb4fabe8193932934b272a5ce5c9dfc18b2f44cdd6ba680e1a7d6c3/types_torch-0.1.1-py3-none-any.whl", hash = "sha256:40326cb077c041279090257b1529d1705a3e0018a395fd52bb19d9d68a1af363", size = 86265, upload-time = "2025-04-01T09:01:11.861Z" },
 ]
 
 [[package]]

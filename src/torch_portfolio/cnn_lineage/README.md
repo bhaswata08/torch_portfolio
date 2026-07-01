@@ -7,8 +7,8 @@
 - [x] VGGNet
 - [x] Inception/GoogleNet
 - [x] ResNet
-- [ ] SENet
-- [ ] DenseNet
+- [x] SENet
+- [x] DenseNet
 - [ ] MobileNet
 - [ ] EfficientNet
 - [ ] UNet

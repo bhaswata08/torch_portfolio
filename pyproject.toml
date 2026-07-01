@@ -17,6 +17,7 @@ dependencies = [
     "torch>=2.11.0",
     "torchvision>=0.26.0",
     "typer>=0.25.1",
+    "types-torch>=0.1.1",
 ]
 
 [project.scripts]
