@@ -21,14 +21,21 @@ _REGISTRY: dict[str, ModelFactory] = {
 **CNN Lineage** (current project)
 
 ```
-→ SENet
-→ DenseNet
-→ MobileNet
-→ EfficientNet
-→ UNet
-→ ViT
-→ Swin Transformer
-→ ConvNeXt
+-> Basic FCN
+-> Basic CNN
+-> Lenet5
+-> AlexNet
+-> VGGNet
+-> Inception/GoogleNet
+-> ResNet
+-> SENet
+-> DenseNet
+-> MobileNet
+-> EfficientNet
+-> UNet
+-> ViT
+-> Swim Transformer
+-> ConvNeXt
 ```
 
 ---
