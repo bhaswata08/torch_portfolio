@@ -52,9 +52,17 @@ _REGISTRY: dict[str, ModelFactory] = {
 → Positional Encoding variants (sinusoidal / learned / RoPE / ALiBi)
 → Transformer (Vaswani 2017)
 → BERT
+    - RoBERTa
+    - ALBERT
+    - DeBERTa
+    - ConvBERT
+    - BigBird
+    - ELECTRA
+→ XLNet
 → GPT
 → T5
 → MoE (sparse routing, toy implementation)
+Distillation
 ```
 
 ---

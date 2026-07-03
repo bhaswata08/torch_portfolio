@@ -27,6 +27,8 @@ class MobileNetV1(nn.Module):
 
         layers = []
         config = [64, 128, 256, 512]
+        for i in range(len(config)):
+            pass
         layers.extend(
             [
                 nn.Conv2d(
